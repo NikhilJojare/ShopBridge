@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EFF3282-2735-4327-BF91-2E705192F423}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShopBridge</RootNamespace>
+    <AssemblyName>ShopBridge</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FileUploadController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemMastersController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemMaster.cs">
+      <DependentUpon>ShopBridge.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopBridge.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopBridge.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopBridge.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopBridge.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopBridge.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopBridge.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\controllers\ItemController.js" />
+    <Content Include="App\services\CommonServices.js" />
+    <Content Include="App\services\ExceptionHandler.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jcrop.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.bootstrap.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.foundation.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.foundation.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.jqueryui.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.semanticui.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\jquery.dataTables.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\css\jquery.dataTables.min.css" />
+    <Content Include="Content\plugins\DataTables-1.10.21\images\sort_asc.png" />
+    <Content Include="Content\plugins\DataTables-1.10.21\images\sort_asc_disabled.png" />
+    <Content Include="Content\plugins\DataTables-1.10.21\images\sort_both.png" />
+    <Content Include="Content\plugins\DataTables-1.10.21\images\sort_desc.png" />
+    <Content Include="Content\plugins\DataTables-1.10.21\images\sort_desc_disabled.png" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.bootstrap.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.foundation.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.foundation.min.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.jqueryui.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.semanticui.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\jquery.dataTables.js" />
+    <Content Include="Content\plugins\DataTables-1.10.21\js\jquery.dataTables.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.bootstrap.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.bootstrap4.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.dataTables.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.dataTables.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.foundation.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.foundation.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.jqueryui.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.semanticui.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\css\responsive.semanticui.min.css" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\dataTables.responsive.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\dataTables.responsive.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.bootstrap.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.bootstrap.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.bootstrap4.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.bootstrap4.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.foundation.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.foundation.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.jqueryui.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.jqueryui.min.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.semanticui.js" />
+    <Content Include="Content\plugins\Responsive-2.2.4\js\responsive.semanticui.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.dataTables.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.foundation.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.semanticui.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\dataTables.rowReorder.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\dataTables.rowReorder.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.bootstrap.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.bootstrap.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.bootstrap4.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.bootstrap4.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.dataTables.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.foundation.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.foundation.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.jqueryui.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.jqueryui.min.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.semanticui.js" />
+    <Content Include="Content\plugins\RowReorder-1.2.7\js\rowReorder.semanticui.min.js" />
+    <Content Include="Content\Scripts\angular-animate.min.js" />
+    <Content Include="Content\Scripts\angular-route.min.js" />
+    <Content Include="Content\Scripts\angular.min.js" />
+    <Content Include="Content\Scripts\jcrop.js" />
+    <Content Include="Content\Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Content\Scripts\ng-file-upload.js" />
+    <Content Include="Content\Scripts\SweetAlert.min.js" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\ShopBridge.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShopBridge.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ShopBridge.edmx.diagram">
+      <DependentUpon>ShopBridge.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Models\ShopBridge.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShopBridge.Context.cs</LastGenOutput>
+      <DependentUpon>ShopBridge.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ShopBridge.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShopBridge.edmx</DependentUpon>
+      <LastGenOutput>ShopBridge.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Template\AddItems.html" />
+    <Content Include="Template\ItemDashboard.html" />
+    <Content Include="Template\ViewItem.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Items\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64258</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64258/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

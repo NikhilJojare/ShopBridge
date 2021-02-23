@@ -1,0 +1,83 @@
+﻿<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .thumb {
+        width: 24px;
+        height: 24px;
+        float: none;
+        position: relative;
+        top: 7px;
+    }
+
+    form .progressBar {
+        line-height: 15px;
+    }
+
+    .progressBar {
+        height: 14px;
+        border-radius: 6px;
+    }
+
+        .progressBar > div {
+            background: #1E74FD;
+            height: 14px;
+            line-height: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0;
+            width: 0%;
+        }
+</style>
+
+<h2></h2>
+<div class="form-horizontal">
+    <div class="panel panel-default">
+        <div class="panel-heading">Item Master</div>
+        <div class="panel-body">
+            <form id="itemForm" name="itemForm" class="needs-validation" novalidate="novalidate">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="ItemName">Item Name</label> <span class="text-danger">*</span>
+                        <input type="text" class="form-control" id="ItemName" name="ItemName" ng-model="ItemData.ItemName"
+                               placeholder="Enter Item Name" required>
+                        <span ng-show="submitted && ItemData.ItemName == null"
+                           class="text-danger">Item Name is required.</span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Price">Price</label> <span class="text-danger">*</span>
+                        <input type="number" class="form-control" id="Price" name="Price" ng-model="ItemData.Price" min="0"
+                               placeholder="Enter Price" required>
+                        <span ng-show="submitted && ItemData.Price == null"
+                           class="text-danger">Price is required.</span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Description">Description</label>
+                        <textarea class="form-control" id="Description" name="Description" ng-model="ItemData.Description" placeholder="Enter Description"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="ImagePath">Item Image</label>
+                        <input type="file" class="form-control" id="UploadedFile" ng-model="ItemData.ImagePath" name="UploadedFile"
+                               accept="image/*" valid-file my-upload />
+                        <br />
+                        <div id="dvProgress" class="progressBar" ng-show="Progress >= 0"></div>
+                        <img src="{{image}}" id="widePhoto">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+                    <input type="submit" value="Save" class="btn btn-primary" ng-click="SaveItemData(itemForm.$valid)" />
+                    <input type="button" class="btn btn-danger" value="Cancel" onclick="window.location= '#items'" />
+        </div>
+    </div>
+</div>
+
+

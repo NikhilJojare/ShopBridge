@@ -1,0 +1,25 @@
+﻿<h1></h1>
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Item Master</div>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Item Name</th>
+                    <td>  {{ItemMaster.ItemName}}</td>
+                    <th>Price</th>
+                    <td> {{ItemMaster.Price}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td> {{ItemMaster.Description}}</td>
+                    <th>Image</th>
+                    <td> <img src="{{ItemMaster.ImagePath}}" class="img-responsive" /></td>
+                </tr>
+            </table>
+            <p>
+                <input type="button" class="btn btn-primary" value="Back" onclick="window.location= '#items'" />
+            </p>
+        </div>
+    </div>
+</div>
