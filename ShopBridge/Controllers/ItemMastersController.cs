@@ -58,22 +58,28 @@ namespace ShopBridge.Controllers
         }
 
         // PUT: odata/ItemMasters(5)
-        public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<ItemMaster> patch)
+        public async Task<IHttpActionResult> Put([FromODataUri] int key, ItemMaster itemMaster)
         {
-            Validate(patch.GetEntity());
+            
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            ItemMaster itemMaster = await db.ItemMasters.FindAsync(key);
-            if (itemMaster == null)
+            ItemMaster data = await db.ItemMasters.FindAsync(key);
+            if (data == null)
             {
                 return NotFound();
             }
 
-            patch.Put(itemMaster);
+            data.ItemName = itemMaster.ItemName;
+            data.Price = itemMaster.Price;
+            data.Description = itemMaster.Description;
+            data.ImagePath = itemMaster.ImagePath;
+            data.IsActive = itemMaster.IsActive;
+            data.Modified = itemMaster.Modified;
+            data.ModifiedBy = itemMaster.ModifiedBy;
 
             try
             {
@@ -97,13 +103,24 @@ namespace ShopBridge.Controllers
         // POST: odata/ItemMasters
         public async Task<IHttpActionResult> Post(ItemMaster itemMaster)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                using (var db = new ShopBridgeEntities())
+                {
+                    db.ItemMasters.Add(itemMaster);
+                    await db.SaveChangesAsync();
+                }
             }
+            catch (Exception ex)
+            {
 
-            db.ItemMasters.Add(itemMaster);
-            await db.SaveChangesAsync();
+                throw;
+            }
+           
 
             return Created(itemMaster);
         }
@@ -158,7 +175,7 @@ namespace ShopBridge.Controllers
             db.ItemMasters.Remove(itemMaster);
             await db.SaveChangesAsync();
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return StatusCode(HttpStatusCode.OK);
         }
 
         protected override void Dispose(bool disposing)

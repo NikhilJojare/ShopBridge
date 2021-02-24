@@ -43,7 +43,6 @@ F:\data\ShopBridge\ShopBridge\obj\Debug\ShopBridge.csproj.CoreCompileInputs.cach
 F:\data\ShopBridge\ShopBridge\obj\Debug\ShopBridge.csproj.CopyComplete
 F:\data\ShopBridge\ShopBridge\obj\Debug\ShopBridge.dll
 F:\data\ShopBridge\ShopBridge\obj\Debug\ShopBridge.pdb
-F:\data\ShopBridge\ShopBridge\obj\Debug\ShopBridge.csprojAssemblyReference.cache
 F:\data\ShopBridge\ShopBridge\bin\System.Net.Http.Formatting.dll
 F:\data\ShopBridge\ShopBridge\bin\System.Web.Cors.dll
 F:\data\ShopBridge\ShopBridge\bin\System.Web.Http.Cors.dll
@@ -52,3 +51,11 @@ F:\data\ShopBridge\ShopBridge\bin\Newtonsoft.Json.xml
 F:\data\ShopBridge\ShopBridge\bin\System.Net.Http.Formatting.xml
 F:\data\ShopBridge\ShopBridge\bin\System.Web.Http.xml
 F:\data\ShopBridge\ShopBridge\bin\System.Web.Http.Cors.xml
+F:\data\ShopBridge\ShopBridge\bin\nunit.framework.dll
+F:\data\ShopBridge\ShopBridge\bin\nunit.framework.xml
+F:\data\ShopBridge\ShopBridge\bin\NUnit3.TestAdapter.dll
+F:\data\ShopBridge\ShopBridge\bin\NUnit3.TestAdapter.pdb
+F:\data\ShopBridge\ShopBridge\bin\nunit.engine.dll
+F:\data\ShopBridge\ShopBridge\bin\nunit.engine.api.dll
+F:\data\ShopBridge\ShopBridge\bin\nunit.engine.core.dll
+F:\data\ShopBridge\ShopBridge\bin\Microsoft.VisualStudio.CodeCoverage.Shim.dll
